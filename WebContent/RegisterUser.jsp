@@ -14,6 +14,9 @@
 			Register Username:<input type="text" name="user_name"></input>
 			Password:<input type="password" name="password"></input>
 			Confirm Password:<input type="password" name="c_password"></input>
+			Email:<input type="email" name="email"></input>
+			Address:<input type="text" name="address_line1"></input>
+				<input type="text" name="address_line2"></input>
 			<input type="submit"></input>
 	</form>
 </body>
