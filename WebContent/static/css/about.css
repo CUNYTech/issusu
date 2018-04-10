@@ -1,0 +1,16 @@
+body {
+	background-color: #525476;
+}
+
+.container{
+	text-align: center;
+	color: white;
+}
+
+.container h3 {
+	color: pink;
+}
+
+.container h4 {
+	color: pink;
+}

@@ -1,0 +1,18 @@
+body {
+	background-color: #525476;
+}
+
+
+
+h1{ 
+	font-family: "Abadi MT Condensed Extra Bold"; 
+	color: white;
+	text-align: center;
+}
+
+#loginbox {
+
+	background-color: pink;
+	text-align: center;
+	margin: 0 auto;
+}

@@ -1,0 +1,41 @@
+.vertical-menu {
+	height: 1000px;
+    width: 300px; /* Set a width if you like */
+    background-color: #80ccff; /* Grey background color */
+    float:left;
+}
+
+.vertical-menu a {
+    /* background-color: #008ae6; Grey background color*/
+    color: black; /* Black text color */
+    display: block; /* Make the links appear below each other */
+    padding: 12px; /* Add some padding */
+    text-decoration: none; /* Remove underline from links */
+    margin-left: 50px;
+}
+
+.vertical-menu img {
+    margin-top: 100px;
+    margin-left: 50px;
+	height: 200px;
+	width: 200px;
+
+}
+
+.vertical-menu a:hover {
+    background-color: #008ae6; /* Dark grey background on mouse-over */
+}
+
+.vertical-menu a.active {
+    background-color: #008ae6; /* Add a green color to the "active/current" link */
+    color: white;
+} 
+
+article {
+    float: left;
+    /*margin-left: 310px;*/
+    /*margin-top: 100px;*/
+    /*border-left: 1px solid gray;*/
+    /*padding: 1em;*/
+    /*overflow: hidden;*/
+}
