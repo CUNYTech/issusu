@@ -1,76 +1,77 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>Susu Home Page</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href="<c:url value="/static/css/navbar.css" />" rel="stylesheet" type="text/css" >
+    <link href="<c:url value="/static/css/StartSusu.css" />" rel="stylesheet" type="text/css" >
 </head>
 
 <body>
-	<h2>Susu Home Page</h2>
+	 <div id="navigation"><jsp:include page="navbar.jsp"></jsp:include></div>
 	<hr>
-	
-	<p>
-	Welcome to the Susu home page!
-	</p>
-	
+				<h2 align="center">Welcome to your home page, <security:authentication property="principal.username" />!</h2>
 	<hr>
-	
-	<!-- display user name and role -->
-	
-	<p>
-		User: <security:authentication property="principal.username" />
-		<br><br>
-		Role(s): <security:authentication property="principal.authorities" />
-	</p>
-	
+	 <div class="vertical-menu">
+		 	  <img src="<c:url value="/static/images/face.jpeg"/>">
+			  <!-- <a href="#" class="active">Home</a> -->
+			  <br /><br />
+			  <a href="#" style="margin-left: 100px;">Achievements</a>
+		</div> 
+							<!-- display user name and role -->
+							
+							<!-- 	<p> -->
+							<%-- 		User: <security:authentication property="principal.username" /> --%>
+							<!-- 		<br><br> -->
+							<%-- 		Role(s): <security:authentication property="principal.authorities" /> --%>
+							<!-- 	</p> -->
+
 	<!-- Add a FEED button -->
 	<form:form action="${pageContext.request.contextPath}/feed" 
 			   method="POST">
-	
-		<input type="submit" value="Feed" />
+		&nbsp;&nbsp;<input type="submit" value="Feed" />
 	</form:form>
+	<br>
 	
 	<!-- Add "My Groups" button -->
 	<form:form action="${pageContext.request.contextPath}/groups/userGroups" 
 			   method="GET">
-	
-		<input type="submit" value="My Groups" />
+		&nbsp;&nbsp;<input type="submit" value="My Groups" />
 	</form:form>
-		
+	<br>
+	
 	<!-- Add Friends button -->
-	<form:form action="${pageContext.request.contextPath}/friends" 
-			   method="POST">
-	
-		<input type="submit" value="Friends" />
+	<form:form action="${pageContext.request.contextPath}/friends/showFriends" 
+			   method="GET">
+		&nbsp;&nbsp;<input type="submit" value="Friends" />
 	</form:form>
+	<br>
 	
 	<!-- Add "Find SUSU" button -->
 	<form:form action="${pageContext.request.contextPath}/groups/findSusu" 
 			   method="POST">
-	
-		<input type="submit" value="Find SUSU" />
+		&nbsp;&nbsp;<input type="submit" value="Find SUSU" />
 	</form:form>
+	<br>
 	
 	<!-- Add Account button -->
 	<form:form action="${pageContext.request.contextPath}/account" 
 			   method="POST">
-	
-		<input type="submit" value="Account" />
+		&nbsp;&nbsp;<input type="submit" value="Account" />
 	</form:form>
+	<br>
 	
 		<!-- Add "Start SUSU" button -->
 	<form:form action="${pageContext.request.contextPath}/groups/showStartSusuForm" 
 			   method="GET">
-	
-		<input type="submit" value="Start SUSU" />
+		&nbsp;&nbsp;<input type="submit" value="Start SUSU" />
 	</form:form>
-	
-	
-	
-	
-	
 	
 	<security:authorize access="hasRole('MANAGER')">
 	
@@ -101,11 +102,9 @@
 	<!-- Add a logout button -->
 	<form:form action="${pageContext.request.contextPath}/logout" 
 			   method="POST">
-	
-		<input type="submit" value="Logout" />
-	
+		&nbsp;&nbsp;<input type="submit" value="Logout" />
 	</form:form>
-	
+		
 </body>
 
 </html>

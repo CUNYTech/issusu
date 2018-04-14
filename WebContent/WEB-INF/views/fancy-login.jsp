@@ -89,7 +89,7 @@
 							</div>
 						</div>
 
-						<!-- I'm manually adding tokens ... Bro! -->
+						<!-- I'm manually adding tokens -->
 
 						<input type="hidden"
 							   name="${_csrf.parameterName}"

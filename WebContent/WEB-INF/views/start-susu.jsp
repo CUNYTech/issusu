@@ -9,7 +9,7 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 		<link href="<c:url value="/static/css/navbar.css" />" rel="stylesheet" type="text/css" >
 	    <link href="<c:url value="/static/css/index.css" />" rel="stylesheet" type="text/css" >
-
+		<link href="<c:url value="/static/css/StartSusu.css" />" rel="stylesheet" type="text/css" >
 	</head>
 
 	<body>
@@ -34,7 +34,7 @@
 		<article> 
 
 			<form:form action="${pageContext.request.contextPath}/groups/processStartSusuForm" 
-			   method="POST">
+			   method="POST" modelAttribute="group">
 				<br />
 				Group Name <br />
 				<form:input path="groupName"/>
@@ -51,7 +51,7 @@
                 <button onclick="myFunction1()">Calculate: </button>
 	            <p id="demo1"></p>
 
-				    Please select your donation frequency:
+				Please select your donation frequency:
 				    <br />
 				  <form:radiobutton path = "howOften" value = "Monthly" label = "Monthly" />
                   <form:radiobutton path = "howOften" value = "BiWeekly" label = "Bi-Weekly" />

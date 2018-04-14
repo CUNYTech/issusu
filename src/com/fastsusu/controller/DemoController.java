@@ -34,6 +34,12 @@ public class DemoController {
 		return "systems";
 	}
 	
+	@RequestMapping("/showAbout")
+	public String showAbout() {
+		
+		return "about";
+	}
+	
 }
 
 

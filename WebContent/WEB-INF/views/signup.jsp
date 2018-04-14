@@ -20,17 +20,15 @@
 	<body>
 		<div id="navigation"><jsp:include page="navbar.jsp"></jsp:include></div>
 		
-		<h1>Sign Up and Start Saving Today</h1>
-
-
-		<div id="loginbox" style="margin-top: 50px;"
-			class="mainbox col-md-3 col-md-offset-2 col-sm-6 col-sm-offset-2">
+		<h1 align="center">Sign Up and Start Saving Today</h1>
 			
 			<div class="panel panel-primary">
 
 				<div class="panel-heading">
-					<div class="panel-title">Create New Account</div>
+					<div class="panel-title" align="center"><h3><b>Create New Account</b></h3></div>
 				</div>
+					<div id="loginbox" style="margin-top: 50px;"
+			class="mainbox col-md-3 col-md-offset-2 col-sm-6 col-sm-offset-2" align="center">
 				<div style="padding-top: 30px" class="panel-body">
 
 					<!-- Registration Form -->
@@ -57,17 +55,18 @@
 					    </div>
 
 						<div style="margin-bottom: 25px" class="input-group">
-
 							<label for="User Name"><b>User Name</b></label>
-	    					<!-- <input type="text" placeholder="Enter Email" name="email" required> -->
+							&nbsp; &nbsp;
 	    					<form:input path="userName" placeholder="username" class="form-control" />
     					</div>
+    					
+    					
 						<div style="margin-bottom: 25px" class="input-group">
 							<label for="password"><b>Password</b></label>
-							<!-- <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>  -->
-							
+							&nbsp; &nbsp;
 							<form:password path="password" placeholder="password" class="form-control" />
 						</div>
+
 
 						<div style="margin-top: 10px" class="form-group">						
 							<div class="col-sm-6 controls">

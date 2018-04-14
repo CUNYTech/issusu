@@ -1,6 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -24,23 +25,35 @@
   <form action="${pageContext.request.contextPath}/authenticateTheUser" method="POST">
   	<div class="container">
   
-      <p>--------</p> <!-- needed a solution for spacing issue   -->
-        <div class="form-input">
-          <input type="text"name="username" placeholder="Username">
+      <hr>
+      <br>
+      <span style="display:inline-block; width: 20sp;"></span>   
+        <div class="form-input" align="center">
+          <input type="text"name="username" placeholder="Username"/>
         </div>
-
-        <div class="form-input">
+	  <br>
+<!-- 	  <span style="display:inline-block; width: 20sp;"></span> -->
+        <div class="form-input" align="center">
           <input type="password" name="password" placeholder="Password">
         </div>
-
-        <input type="submit" name="submit" value="LOGIN" class="btn-login">
-
+	  <br><br>
+	  <span style="display:inline-block; width: 60;"></span>
+	  
+	  <div class="btn-login" align="center">
+      	<input type="submit" name="submit" value="LOGIN">
+	  </div>
+	  
       </div>
-      <a href="#">Forgot password?</a> |
-      <a href="#"> Don't have an account?</a>
-      <p>--------</p>
+      <hr><br>
+      <div align="center">
+	      <a href="#">Forgot password?</a> |
+	      <a href="${pageContext.request.contextPath}/showRegistrationForm"> Don't have an account?</a>
+	  </div>
+	  
       <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+      
     </form>
+    
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
      <script src="<c:url value='/static/js/script1.js' />" type="text/javascript"></script>

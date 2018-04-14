@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!doctype html>
@@ -27,7 +26,7 @@
 
     <h1>Savings Just Got Easier.</h1>
       <h2>Join a group and save up your finances in a fast and easy way. </h2>
-      <p><a class="button1  btn-lg" href="../../static/html/about.html" role="button">Learn more</a></p>
+      <p><a class="button1  btn-lg" href="${pageContext.request.contextPath}/showAbout" role="button">Learn more</a></p>
       <p><a class="button2  btn-lg" href="${pageContext.request.contextPath}/showMyLoginPage" role="button">Get Started</a></p>
     </div>
 
@@ -58,7 +57,7 @@
   
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-        <script src="<c:url value='/static/js/script1.js' />" type="text/javascript"></script>
+        <script src="<c:url value="/static/js/script1.js" />" type="text/javascript"></script>
 
   </body>
 </html>

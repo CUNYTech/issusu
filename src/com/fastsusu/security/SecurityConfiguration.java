@@ -33,23 +33,13 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
 		.antMatchers("/").permitAll()
-		.antMatchers("/home**").hasRole("EMPLOYEE")
-		.antMatchers("/groups**","/register**").hasRole("EMPLOYEE")
+		.antMatchers("/home**","/groups**","/register**","/friends**").hasRole("EMPLOYEE")
 		.antMatchers("/leaders/**").hasRole("MANAGER")
 		.antMatchers("/systems/**").hasRole("ADMIN").and().formLogin().loginPage("/showMyLoginPage")
 		.loginProcessingUrl("/authenticateTheUser").defaultSuccessUrl("/home").permitAll().and().logout().permitAll().and()
 		.exceptionHandling().accessDeniedPage("/access-denied");
 	}
 
-//	Override
-//	protected void configure(HttpSecurity http) throws Exception {
-//		http.authorizeRequests()
-//			.antMatchers("/homePage").access("hasRole('ROLE_USER')")
-//			.and().formLogin().loginPage("/loginPage").defaultSuccessUrl("/homePage")
-//			.failureUrl("/loginPage?error").usernameParameter("username").passwordParameter("password")				
-//			.and().logout().logoutSuccessUrl("/loginPage?logout"); 
-//	}
-	
 	@Bean
 	public PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
