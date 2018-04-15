@@ -1,21 +1,29 @@
 package com.fastsusu.controller;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.logging.Logger;
 
 import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.fastsusu.model.Group;
 import com.fastsusu.service.GroupService;
-
+/**
+ * Group 
+ * @author 
+ *
+ */
 @Controller
 @RequestMapping("/groups")
 public class GroupController {
@@ -24,6 +32,13 @@ public class GroupController {
 	
 	@Autowired
 	private GroupService groupService;
+	
+	@InitBinder
+	public void dataBinding(WebDataBinder binder) {
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		dateFormat.setLenient(false);
+		binder.registerCustomEditor(Date.class, "startDate", new CustomDateEditor(dateFormat, true));
+	}
 
 	@RequestMapping("/showStartSusuForm")
 	public String showStartSusuForm(Model theModel) {
@@ -42,7 +57,7 @@ public class GroupController {
 
 		// Check for error codes
 		System.out.println("Binding Result: " + theResult);
-
+		
 		// If there are any error codes reload the registration page
 		if (theResult.hasErrors())
 			return "start-susu";
@@ -52,7 +67,6 @@ public class GroupController {
 			theModel.addAttribute("groupError", "Group name already exists.");
 
 			logger.warning("Group name already exists.");
-
 			return "start-susu";
 		}
 		String username = request.getUserPrincipal().getName();

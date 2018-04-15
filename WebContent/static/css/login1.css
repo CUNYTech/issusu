@@ -26,14 +26,14 @@ body{
 }
 
   .container{
-/*    width: 300px
-    height: 100px;
-    text-align: center;
+   width: 450px;
+    height: 500px;
+    /*text-align: center;
     background-color: white;
     border-radius: 50px;
     margin: 200px;
     margin-bottom: 200px;
-    margin-top: 150px;*/
+    margin-top: 150px; */
     background-color: white;
     text-align: center;
     border-radius: 50px;
@@ -56,7 +56,7 @@ body{
   }
   .btn-login{
     padding: 25px 30px;
-    color: #fff;
+    color: #2ECC71;
     border-radius: 4px;
     border: none;
     background-color: #2ECC71;

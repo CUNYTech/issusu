@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link href="<c:url value="/static/css/navbar.css" />" rel="stylesheet" type="text/css" >
     <link href="<c:url value="/static/css/index.css" />" rel="stylesheet" type="text/css" >
+    <link href="<c:url value="/static/css/login1.css" />" rel="stylesheet" type="text/css" >
 </head>
 
 
@@ -25,25 +26,25 @@
   <form action="${pageContext.request.contextPath}/authenticateTheUser" method="POST">
   	<div class="container">
   
-      <hr>
-      <br>
-      <span style="display:inline-block; width: 20sp;"></span>   
-        <div class="form-input" align="center">
-          <input type="text"name="username" placeholder="Username"/>
-        </div>
-	  <br>
-<!-- 	  <span style="display:inline-block; width: 20sp;"></span> -->
-        <div class="form-input" align="center">
-          <input type="password" name="password" placeholder="Password">
-        </div>
-	  <br><br>
-	  <span style="display:inline-block; width: 60;"></span>
+	      <hr>
+	      <br>
+	      <span style="display:inline-block; width: 20sp;"></span>   
+	        <div class="form-input" align="center">
+	          <input type="text"name="username" placeholder="Username"/>
+	        </div>
+		  <br>
+	<!-- 	  <span style="display:inline-block; width: 20sp;"></span> -->
+	        <div class="form-input" align="center">
+	          <input type="password" name="password" placeholder="Password">
+	        </div>
+		  <br><br>
+		  <span style="display:inline-block; width: 60;"></span>
+		  
+		  <div class="btn-login" align="center">
+	      	<input type="submit" name="submit" value="LOGIN">
+		  </div>
 	  
-	  <div class="btn-login" align="center">
-      	<input type="submit" name="submit" value="LOGIN">
-	  </div>
-	  
-      </div>
+   </div>
       <hr><br>
       <div align="center">
 	      <a href="#">Forgot password?</a> |

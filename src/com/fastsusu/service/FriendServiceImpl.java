@@ -31,4 +31,9 @@ public class FriendServiceImpl implements FriendService {
 		return friendDao.findUserFriends(userName);
 	}
 
+	@Override
+	public void delete(int friendId) {
+		friendDao.delete(friendId);
+	}
+
 }

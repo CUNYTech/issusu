@@ -36,4 +36,10 @@ public class FriendDaoImpl extends AbstractDao<Integer, Friend> implements Frien
 		return friends;
 	}
 
+	@Override
+	public void delete(int friendId) {
+		Friend friend = findById(friendId);
+		delete(friend);
+	}
+
 }

@@ -11,4 +11,6 @@ public interface FriendService {
 	void save(Friend friend);
 
 	List<Friend> findUserFriends(String userName);
+	
+	void delete(int friendId);
 }

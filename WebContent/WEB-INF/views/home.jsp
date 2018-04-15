@@ -33,7 +33,7 @@
 							<!-- 	</p> -->
 
 	<!-- Add a FEED button -->
-	<form:form action="${pageContext.request.contextPath}/feed" 
+	<form:form action="${pageContext.request.contextPath}/feeds/showFeedForm" 
 			   method="POST">
 		&nbsp;&nbsp;<input type="submit" value="Feed" />
 	</form:form>

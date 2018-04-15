@@ -11,7 +11,7 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link href="<c:url value="/static/css/navbar.css" />" rel="stylesheet" type="text/css" >
-    <link href="<c:url value="/static/css/index.css" />" rel="stylesheet" type="text/css" >
+    <link href="<c:url value="/static/css/StartSusu.css" />" rel="stylesheet" type="text/css" >
 </head>
 
 

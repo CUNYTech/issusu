@@ -7,6 +7,6 @@
   	<a class="btn btn-outline-success my-2 my-sm-0" class="btn btn-outline-success" href="${pageContext.request.contextPath}/showAbout">About</a>
     <a class="btn btn-outline-success my-2 my-sm-0" class="btn btn-outline-success" href="${pageContext.request.contextPath}/showMyLoginPage">Log In</a>
     <a class="btn btn-outline-success my-2 my-sm-0" class="btn btn-outline-success" href="${pageContext.request.contextPath}/register/showRegistrationForm">Sign Up</a>   
-    <!-- <a class="btn btn-outline-success my-2 my-sm-0" class="btn btn-outline-success" href="./index.html">Home</a> -->
+    <a class="btn btn-outline-success my-2 my-sm-0" class="btn btn-outline-success" href="${pageContext.request.contextPath}/home">Home</a>
   </form>
 </nav>

@@ -54,7 +54,6 @@
 				</div>
 			</div>
 		</form:form>
-		<p>
 			<table style="width:100%">
 			  <tr>
 			    <th>Friend Name</th>
@@ -62,11 +61,10 @@
 			  <c:forEach items ="${friends}" var="friend">
 				  <tr>
 				    <td>${friend.friendName}</td>
+				    <td><a href="${pageContext.request.contextPath}/friends/removeFriend?friendId=${friend.friendId}">Remove</a></a></td>
 				  </tr>
 			  </c:forEach>
 			</table>
-			
-		</p>
 	<hr>
 	
 		<!-- Add a logout button -->
@@ -74,6 +72,7 @@
 				   method="POST">
 			<input type="submit" value="Logout" />
 		</form:form> 
+		<br/><br/>
 		<form:form action="${pageContext.request.contextPath}/" 
 			   method="GET">
 			<input type="submit" value="Home" />

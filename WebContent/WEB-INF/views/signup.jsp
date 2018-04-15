@@ -13,7 +13,7 @@
 		<!-- compiled and minified css cdn-->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 		<link href="<c:url value="/static/css/navbar.css" />" rel="stylesheet" type="text/css" >
-	    <link href="<c:url value="/static/css/index.css" />" rel="stylesheet" type="text/css" >
+	    <link href="<c:url value="/static/css/SignUp.css" />" rel="stylesheet" type="text/css" >
 
 	</head>
 

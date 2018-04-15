@@ -11,4 +11,6 @@ public interface FriendDao {
 	void save(Friend friend);
 
 	List<Friend> findUserFriends(String userName);
+	
+	void delete(int friendId);
 }
