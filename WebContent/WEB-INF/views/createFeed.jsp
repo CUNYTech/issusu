@@ -25,19 +25,36 @@
 
 <body>
 	<div>
-		<p>User: <security:authentication property="principal.username" /> Friends</p>
 		<hr>
+		<div class="form-group">
+	        <div class="col-xs-15">
+	            <div>
+				
+					<!-- Check for registration error -->
+					<c:if test="${successFeed}">
+				
+						<div class="alert alert-success" role="alert">
+							<spring:message code="feed.creation.success"/>
+						</div>
+
+					</c:if>
+															
+	            </div>
+	        </div>
+	    </div>
 		<!-- Place for messages: error, alert etc ... -->
 		<form:form action="${pageContext.request.contextPath}/feeds/createFeed" modelAttribute="feed" method="POST">
 	    	<!-- User name -->
 			<div style="margin-bottom: 25px" class="input-group">
-				User <security:authentication property="principal.username" />
-				<P>
-				<form:input path="comment" placeholder="comment" class="form-control" cssStyle="width:250px;"/>
-				<spring:message code="feeds.createion.message"/>
-				<button type="submit" class="btn btn-primary">Post</button>
-				</P>
+				<table style="border: 0px;">
+					<tr>
+						<td>User <security:authentication property="principal.username" /> bought &nbsp;</td>
+						<td><form:input path="comment" placeholder="comment" class="form-control no-border" cssStyle="border: none;box-shadow: none;"/></td>
+						<td>&nbsp;with money from susu and saved!</td>
+					</tr>
+				</table>
 			</div>
+			<button type="submit" class="btn btn-primary">Post</button>
 		</form:form>
 	<hr>
 	

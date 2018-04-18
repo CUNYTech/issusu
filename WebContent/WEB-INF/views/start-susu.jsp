@@ -32,7 +32,6 @@
 
 		
 		<article> 
-<<<<<<< HEAD
 			<form:form action="${pageContext.request.contextPath}/groups/processStartSusuForm" modelAttribute="group"
 				   method="POST">
 					<br />
@@ -60,39 +59,6 @@
 					&nbsp;&nbsp;Enter your starting date:<br/>
 					&nbsp;&nbsp;<form:input path="startDate" /> 
 					<br/><br/>
-=======
-
-			<form:form action="${pageContext.request.contextPath}/groups/processStartSusuForm" modelAttribute="group" method="POST">
-				<br />
-				Group Name <br />
-				<form:input path="groupName"/>
-				<br />
-				Number of Participants<br />
-				<form:input path="groupSize"/>
-                <br />
-
-				Pot Size<br />
-				 <form:input path="payoutAmount" /> 
-                <br />
-                <br />
-
-                <button onclick="myFunction1()">Calculate: </button>
-	            <p id="demo1"></p>
-
-				    Please select your donation frequency:
-				    <br />
-				  <form:radiobutton path = "howOften" value = "Monthly" label = "Monthly" />
-                  <form:radiobutton path = "howOften" value = "BiWeekly" label = "Bi-Weekly" />
-
-				<button onclick="myFunction3()">Alert</button>
-	            <p id="demo3"></p>
-
-
-
-					<label>Enter your starting date:</label>
-					<!-- <input type="date" name="startDate" > -->
-					<form:input path="startDate" /> 
->>>>>>> 87a83736d5f6088ba1a14da8bada2ee846f0be33
 					
 		            &nbsp;&nbsp;<button onclick="myFunction2()">Calculate your end date</button>
 					<br/>

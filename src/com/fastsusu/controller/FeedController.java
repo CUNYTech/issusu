@@ -38,10 +38,12 @@ public class FeedController {
 
 		String loggedInUser = request.getUserPrincipal().getName();
 		feed.setUserName(loggedInUser);
-		feed.setComment(feed.getComment() + messageSource.getMessage("feeds.createion.message", null, locale));
+		feed.setComment(messageSource.getMessage("feeds.createion.message",new Object[]{loggedInUser, feed.getComment()} , locale));
 		feed.setCreationDate(new Date());
-
+		
 		feedService.save(feed);
+		
+		theModel.addAttribute("successFeed", true);
 
 		return "createFeed";
 	}

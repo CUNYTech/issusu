@@ -30,7 +30,7 @@ public class FeedDaoImpl extends AbstractDao<Integer, Feeds> implements FeedDao 
 
 	@Override
 	public List<Feeds> findAllFeeds() {
-		Criteria criteria = createEntityCriteria().addOrder(Order.asc("userName"));
+		Criteria criteria = createEntityCriteria().addOrder(Order.desc("creationDate"));
 		criteria.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);// To avoid
 																		// duplicates.
 		@SuppressWarnings("unchecked")
