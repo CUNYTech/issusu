@@ -26,21 +26,19 @@
 <%-- 	<div id="navigation"><jsp:include page="navbar.jsp"></jsp:include></div> --%>
 
 	<div>
-		<p>User: <security:authentication property="principal.username" /> registered Groups</p>
+		<p>Group: ${group.groupName}</p>
 		<hr>
 			<table style="width:100%">
 			  <tr>
-			    <th>Group Name</th>
-			    <th>Group Size</th> 
-			    <th>Often to donate</th>
-			    <th>Payout Amount</th>
+			    <th>User Name</th>
+			    <th>Winners</th> 
+			    <th>Current Cycle</th>
 			  </tr>
-			  <c:forEach items ="${groups}" var="group">
+			  <c:forEach items ="${groupUsers}" var="user">
 				  <tr>
-				    <td><a href="${pageContext.request.contextPath}/groups/groupDetails?groupId=${group.id}">${group.groupName}</a></td>
-				    <td>${group.groupSize}</td>
-				    <td>${group.howOften}</td>
-				    <td>${group.payoutAmount}</td>
+				    <td>${user.userName}</td>
+				    <td>Cycle ${user.userGroupId}</td>
+				    <td>OK</td>
 				  </tr>
 			  </c:forEach>
 			</table>	

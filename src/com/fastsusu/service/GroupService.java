@@ -6,6 +6,7 @@ package com.fastsusu.service;
 import java.util.List;
 
 import com.fastsusu.model.Group;
+import com.fastsusu.model.UserGroupMapping;
 
 /**
  * @author R
@@ -25,4 +26,7 @@ public interface GroupService {
 	
 	void associateGroup(int groupId, String userName);
 
+	int findAGroupCount(int groupId);
+	
+	List<UserGroupMapping> findGroupUsers(int groupId);
 }

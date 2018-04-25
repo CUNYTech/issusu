@@ -32,7 +32,23 @@
 
 		
 		<article> 
-			<form:form action="${pageContext.request.contextPath}/groups/processStartSusuForm" modelAttribute="group"
+		<div class="form-group">
+	        <div class="col-xs-15">
+	            <div>
+				
+					<!-- Check for registration error -->
+					<c:if test="${groupError != null}">
+				
+						<div class="alert alert-danger col-xs-offset-1 col-xs-10">
+							${groupError}
+						</div>
+
+					</c:if>
+															
+	            </div>
+	        </div>
+	    </div>
+			<form:form action="${pageContext.request.contextPath}/payment/enrollGroup" modelAttribute="group"
 				   method="POST">
 					<br />
 					&nbsp;&nbsp;Group Name <br />

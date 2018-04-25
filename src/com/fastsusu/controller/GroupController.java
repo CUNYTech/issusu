@@ -54,21 +54,15 @@ public class GroupController {
 
 	@RequestMapping("/processStartSusuForm")
 	public String processStartSusu(@ModelAttribute("group") Group theGroup, Model theModel, BindingResult theResult, HttpServletRequest request) {
+		
+		if(theGroup.getGroupSize() < 1){
 
-		// Check for error codes
-		System.out.println("Binding Result: " + theResult);
-		
-		// If there are any error codes reload the registration page
-		if (theResult.hasErrors())
-			return "start-susu";
-		
-		if(groupService.findByName(theGroup.getGroupName()) != null){
+			// add the object to the model
 			theModel.addAttribute("group", theGroup);
-			theModel.addAttribute("groupError", "Group name already exists.");
 
-			logger.warning("Group name already exists.");
 			return "start-susu";
 		}
+		
 		String username = request.getUserPrincipal().getName();
 		groupService.save(theGroup, username);
 		theModel.addAttribute("group", theGroup);
@@ -103,5 +97,14 @@ public class GroupController {
 
 		theModel.addAttribute("group", groupService.findById(groupId));
 		return "associateGroup";
+	}
+	
+	@RequestMapping("/groupDetails")
+	public String groupDetails(@RequestParam("groupId") Integer groupId, Model theModel, HttpServletRequest request) {
+
+		Group group = groupService.findById(groupId);
+		theModel.addAttribute("group", group);
+		theModel.addAttribute("groupUsers", groupService.findGroupUsers(groupId));
+		return "groupDetail";
 	}
 }

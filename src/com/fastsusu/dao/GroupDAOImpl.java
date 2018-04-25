@@ -68,9 +68,8 @@ public class GroupDAOImpl extends AbstractDao<Integer, Group> implements GroupDA
 	
 	@Override
 	public List<Group> findNotAssociatedGroups(String username) {
-		String queryString = "Select gp.id from Group gp, CrmUser user, UserGroupMapping usermapping where gp.id=usermapping.groupId";
-		queryString += " AND user.userName=usermapping.userName AND usermapping.userName=:username";
-		queryString += " AND gp.groupSize >= (Select Count(usermapping.groupId) from UserGroupMapping usermapping where usermapping.userName=:username)";
+		String queryString = "Select usermapping.groupId from CrmUser user, UserGroupMapping usermapping where";
+		queryString += " user.userName=usermapping.userName AND usermapping.userName=:username";
 		
 		String notinQueryString = "from Group gp";
 		notinQueryString += " where gp.id NOT IN("+ queryString +")";

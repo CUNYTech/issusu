@@ -27,7 +27,6 @@
 	<div>
 		<p>Groups</p>
 		<hr>
-		<p>
 			<table style="width:100%">
 			  <tr>
 			    <th>Group Name</th>
@@ -37,15 +36,13 @@
 			  </tr>
 			  <c:forEach items ="${groups}" var="group">
 				  <tr>
-				    <td><a href="${pageContext.request.contextPath}/groups/associateGroup?groupId=${group.id}">${group.groupName}</a></td>
+				    <td><a href="${pageContext.request.contextPath}/payment/enroll?groupId=${group.id}">${group.groupName}</a></td>
 				    <td>${group.groupSize}</td>
 				    <td>${group.howOften}</td>
 				    <td>${group.payoutAmount}</td>
 				  </tr>
 			  </c:forEach>
 			</table>
-			
-		</p>
 	<hr>
 	
 		<!-- Add a logout button -->
