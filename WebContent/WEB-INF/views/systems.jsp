@@ -1,12 +1,17 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>  
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
+
+<!doctype html>
 <html>
 
 <head>
-	<title>luv2code SYSTEMS Home Page</title>
+	<title>SYSTEM Admin Home Page</title>
 </head>
 
 <body>
 
-<h2>luv2code SYSTEMS Home Page</h2>
+<h2>SYSTEMS Admin Home Page</h2>
 
 <hr>
 
@@ -18,8 +23,10 @@
 
 <hr>
 
-<a href="${pageContext.request.contextPath}/">Back to Home Page</a>
-
+<form:form action="${pageContext.request.contextPath}/home" 
+			   method="GET">
+			<input type="submit" value="Home" />
+		</form:form>
 </body>
 
 </html>

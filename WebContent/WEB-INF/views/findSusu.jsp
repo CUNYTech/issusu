@@ -13,26 +13,28 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	
 	<!-- Reference Bootstrap files -->
-	<link rel="stylesheet"
-		 href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-	
-	<script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+     <link href="<c:url value="/static/css/navbar.css" />" rel="stylesheet" type="text/css" >
 
 
 </head>
 
 <body>
+<div id="navigation"><jsp:include page="navbar.jsp"></jsp:include></div>
 	<div>
 		<p>Groups</p>
 		<hr>
+		<p>
 			<table style="width:100%">
 			  <tr>
 			    <th>Group Name</th>
 			    <th>Group Size</th> 
 			    <th>Often to donate</th>
-			    <th>Payout Amount</th>
+			    <th>Payment Amount</th>
 			  </tr>
 			  <c:forEach items ="${groups}" var="group">
 				  <tr>
@@ -43,6 +45,8 @@
 				  </tr>
 			  </c:forEach>
 			</table>
+			
+		</p>
 	<hr>
 	
 		<!-- Add a logout button -->
@@ -50,7 +54,7 @@
 				   method="POST">
 			<input type="submit" value="Logout" />
 		</form:form> 
-		<form:form action="${pageContext.request.contextPath}/" 
+		<form:form action="${pageContext.request.contextPath}/home" 
 			   method="GET">
 			<input type="submit" value="Home" />
 		</form:form>

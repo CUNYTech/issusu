@@ -45,11 +45,7 @@
 				   method="POST">
 			<input type="submit" value="Logout" />
 		</form:form>
-		<form:form action="${pageContext.request.contextPath}/" 
-			   method="GET">
-			<input type="submit" value="Home" />
-		</form:form>
-		<form:form action="${pageContext.request.contextPath}/" 
+		<form:form action="${pageContext.request.contextPath}/home" 
 			   method="GET">
 			<input type="submit" value="Home" />
 		</form:form> 

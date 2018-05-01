@@ -16,14 +16,14 @@
 <body>
 	 <div id="navigation"><jsp:include page="navbar.jsp"></jsp:include></div>
 	<hr>
-				<h2 align="center">Welcome to your home page, <security:authentication property="principal.username" />!</h2>
+		<h2 align="center">Welcome to your home page, <security:authentication property="principal.username" />!</h2>
 	<hr>
 	 <div class="vertical-menu">
 		 	  <img src="<c:url value="/static/images/face.jpeg"/>">
 			  <!-- <a href="#" class="active">Home</a> -->
 			  <br /><br />
-			  <a href="#" style="margin-left: 100px;">Achievements</a>
-		</div> 
+			 <!-- <a href="#" style="margin-left: 100px;">Achievements</a> -->
+		 
 							<!-- display user name and role -->
 							
 							<!-- 	<p> -->
@@ -31,7 +31,7 @@
 							<!-- 		<br><br> -->
 							<%-- 		Role(s): <security:authentication property="principal.authorities" /> --%>
 							<!-- 	</p> -->
-	<div style="float: left;">
+	<!-- <div style="float: left;">-->
 		<!-- Add a FEED button -->
 		<form:form action="${pageContext.request.contextPath}/feeds/showFeedForm" 
 				   method="POST">
@@ -83,9 +83,9 @@
 			</p>
 	
 		</security:authorize>	
+
 		
-		
-		<security:authorize access="hasRole('ADMIN')">  
+		<security:authorize access="hasRole('ADMIN')"> 
 	
 			<!-- Add a link to point to /systems ... this is for the admins -->
 			
@@ -105,7 +105,7 @@
 			&nbsp;&nbsp;<input type="submit" value="Logout" />
 		</form:form>
 	</div>
-	<div style="float: right;margin-right: 50px;">
+	<div style="float: center;margin-right: 50px;">
 		<div class="row">
 		    <div class="col">
 		        <div class="card">
